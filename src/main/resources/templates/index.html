@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>MineDuel</title>
+        <!-- <meta http-equiv="refresh" content="3"> -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+    </head>
+    <body>
+        <header>
+            <h1>MineDuel</h1>
+        </header>
+
+        <main>
+        
+        	<p>Play Minesweeper with friends</p>
+        	
+        	<p>Co-op</p>
+        	<p>Try to clear one giant board as fast as you can with others</p>
+        	<p>VS</p>
+        	<p>Challenge others side by side to see who can complete their board the quickest</p>
+        
+            <button id="generateButton" name="generate" onclick="generateGame()")>Generate Game</button>
+            <div id="playLink"></div>
+        </main>
+
+        <footer></footer>
+        
+        <script>
+	        function generateGame() {
+	        	const url = 'http://localhost:8080/game/generate';
+	        	
+	        	(async () => {
+	        		const playLink = await fetch(url)
+	        			.then((resp) => resp.text())
+	        			.then(function(data) {
+	        				return data;
+	        			})
+	        			.catch(function(error) {
+	        				console.log(error);
+	        			});
+	        		
+	        		const link = "http://localhost:8080/game/" + playLink;
+	        		document.getElementById("playLink").innerHTML = "<a href=\"" + link + "\">" + link + "</a>"
+	        		document.getElementById("generateButton").style.display = "none";
+	        	})();
+	        }
+        </script>
+    </body>        
+</html>

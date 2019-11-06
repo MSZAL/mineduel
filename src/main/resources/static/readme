@@ -1,0 +1,11 @@
+
+Client:
+    has no clue of entire board
+    generates blank board
+    updates based on server response
+
+Server:
+    * Generate the board with bomb placements
+    Receive a request from click and return number or mine
+    Establish web socket connection and display opponent board/progress 
+    

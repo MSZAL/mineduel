@@ -1,0 +1,76 @@
+
+body {
+    margin-left: 256px;
+    
+}
+
+h1 {
+	color: red;
+}
+
+#board {
+    width: 256px;
+    height: 256px;
+    background-color: silver;
+    margin: 0;
+}
+
+#board div {
+    background-image: url('sprite100.gif');
+    float: left; 
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+.bombflag {
+    background-position: -16px -39px;
+}
+
+.squareblank {
+    background-position: 0px -39px;
+}
+
+.squareopen {
+    background-position: 0px -23px;
+}
+
+.square1 {
+    background-position: -16px -23px;
+}
+
+.square2 {
+    background-position: -32px -23px;
+}
+
+.square3 {
+    background-position: -48px -23px;
+}
+
+.square4 {
+    background-position: -64px -23px;
+}
+
+.square5 {
+    background-position: -80px -23px;
+}
+
+.square6 {
+    background-position: -96px -23px;
+}
+
+.square7 {
+    background-position: -112px -23px;
+}
+
+.square8 {
+    background-position: -128px -23px;
+}
+
+.bombdeath {
+    background-position: -32px -39px;
+}
+
+.bombreveal {
+    background-position: -64px -39px;
+}
